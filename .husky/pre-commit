@@ -1,4 +1,8 @@
 #!/bin/sh
-terraform fmt -check -recursive
-terraform validate
-tflint
+terraform fmt -check -recursive ./infrastructure
+if [ $? -ne 0 ]; then
+  echo "terraform fmt failed"
+  exit 1
+fi
+terraform -chdir=./infrastructure validate
+tflint --chdir=./infrastructure

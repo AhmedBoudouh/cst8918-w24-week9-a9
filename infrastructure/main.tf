@@ -1,19 +1,20 @@
 terraform {
-    required_providers {
-        azurerm = {
-           source  = "hashicorp/azurerm"
-           version = "~>3.0"
-        }
+  required_version = ">= 1.0"
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~>3.0"
     }
+  }
 }
 provider "azurerm" {
-    features {
+  features {
 
-    }
+  }
 }
 resource "azurerm_resource_group" "rg" {
-    name = var.rg
-        location = var.location
+  name     = var.rg
+  location = var.location
 }
 resource "azurerm_storage_account" "storage" {
   name                     = "a9storage8918"
