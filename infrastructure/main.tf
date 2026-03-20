@@ -14,7 +14,7 @@ provider "azurerm" {
 }
 resource "azurerm_resource_group" "rg" {
   name     = var.rg
-  location = var.location
+             location = var.location
 }
 resource "azurerm_storage_account" "storage" {
   name                     = "a9storage8918"
